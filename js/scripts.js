@@ -22,6 +22,7 @@ const productDescription = document.getElementById("productDescription");
 const button = document.getElementById("buyButton")
 const form = document.getElementById("orderForm")
 const order = document.getElementById("orderConfirmation");
+// const submit = document.getElementById("submit");
 
 
 
@@ -48,27 +49,21 @@ function showProductInfo(product) {
 }
 
 function buyProduct() {
-    // alert("Товар куплено");
     form.style.display = "block"
-    // resetPage();
 }
 
-
-function showOrder(product){
+function showOrder() {
     form.style.display = "none";
     order.style.display = "block";
 
     const city = document.getElementById("city").value;
     const delivery = document.getElementById("delivery").value;
     const quantity = document.getElementById("quantity").value;
+    let productText = productName.textContent
 
-    document.getElementById("productDetails").innerText = "Назва товару: " + product.name;
+    document.getElementById("productDetails").innerText = "Назва товару: " + productText + "\nКількість: " + quantity;
 
     document.getElementById("deliveryDetails").innerText = "Доставка:\nМісто: " + city + "\nСклад Нової пошти: " + delivery;
-
 }
-
-
-
 
 
