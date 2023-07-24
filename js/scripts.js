@@ -22,7 +22,7 @@ const productDescription = document.getElementById("productDescription");
 const button = document.getElementById("buyButton")
 const form = document.getElementById("orderForm")
 const order = document.getElementById("orderConfirmation");
-// const submit = document.getElementById("submit");
+
 
 
 
@@ -51,6 +51,20 @@ function showProductInfo(product) {
 function buyProduct() {
     form.style.display = "block"
 }
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const fullName = document.getElementById("fullName").value;
+    const city = document.getElementById("city").value;
+    const delivery = document.getElementById("delivery").value;
+    const payment = document.getElementById("payment").value;
+    const quantity = document.getElementById("quantity").value;
+
+    if (fullName.trim() !== ''|| city.trim() !== '' || delivery.trim() !== ''|| payment.trim() !== ''| quantity.trim() !== '') {
+        showOrder();
+    }
+});
 
 function showOrder() {
     form.style.display = "none";
